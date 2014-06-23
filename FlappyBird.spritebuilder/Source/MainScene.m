@@ -9,7 +9,8 @@
 #import "MainScene.h"
 #import "Obstacle.h"
 
-@implementation MainScene {
+@implementation MainScene
+{
     CCNode *_ground1;
     CCNode *_ground2;
     NSArray *_grounds;
@@ -28,12 +29,14 @@
 }
 
 
-- (void)didLoadFromCCB {
+- (void)didLoadFromCCB
+{
     self.userInteractionEnabled = TRUE;
     
     _grounds = @[_ground1, _ground2];
     
-    for (CCNode *ground in _grounds) {
+    for (CCNode *ground in _grounds)
+    {
         // set collision txpe
         ground.physicsBody.collisionType = @"level";
         ground.zOrder = DrawingOrderGround;
@@ -51,8 +54,10 @@
 
 #pragma mark - Touch Handling
 
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    if (!_gameOver) {
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    if (!_gameOver)
+    {
         [character.physicsBody applyAngularImpulse:10000.f];
         _sinceTouch = 0.f;
         
@@ -69,8 +74,10 @@
 
 #pragma mark - Game Actions
 
-- (void)gameOver {
-    if (!_gameOver) {
+- (void)gameOver
+{
+    if (!_gameOver)
+    {
         _gameOver = TRUE;
         _restartButton.visible = TRUE;
         
@@ -88,14 +95,16 @@
     }
 }
 
-- (void)restart {
+- (void)restart
+{
     CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 #pragma mark - Obstacle Spawning
 
-- (void)addObstacle {
+- (void)addObstacle
+{
     Obstacle *obstacle = (Obstacle *)[CCBReader load:@"Obstacle"];
     CGPoint screenPosition = [self convertToWorldSpace:ccp(380, 0)];
     CGPoint worldPosition = [physicsNode convertToNodeSpace:screenPosition];

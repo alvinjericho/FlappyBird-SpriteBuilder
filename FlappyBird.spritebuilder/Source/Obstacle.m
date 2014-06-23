@@ -20,7 +20,8 @@ static const CGFloat minimumYPosition = 200.f;
 // visibility ends at 480 and we want some meat
 static const CGFloat maximumYPosition = 380.f;
 
-- (void)didLoadFromCCB {
+- (void)didLoadFromCCB
+{
   _topPipe.physicsBody.collisionType = @"level";
   _topPipe.physicsBody.sensor = YES;
 
@@ -28,7 +29,8 @@ static const CGFloat maximumYPosition = 380.f;
   _bottomPipe.physicsBody.sensor = YES;
 }
 
-- (void)setupRandomPosition {
+- (void)setupRandomPosition
+{
   // value between 0.f and 1.f
   CGFloat random = ((double)arc4random() / ARC4RANDOM_MAX);
   CGFloat range = maximumYPosition - minimumYPosition;
