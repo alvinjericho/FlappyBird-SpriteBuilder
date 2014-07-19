@@ -15,6 +15,15 @@
     CCNode *_ground2;
     NSArray *_grounds;
     
+    CCNode *_cloud1;
+    CCNode *_cloud2;
+    NSArray *_clouds;
+    
+    CCNode *_bush1;
+    CCNode *_bush2;
+    NSArray *_bushes;
+    
+    
     NSTimeInterval _sinceTouch;
     
     NSMutableArray *_obstacles;
@@ -34,6 +43,9 @@
     self.userInteractionEnabled = TRUE;
     
     _grounds = @[_ground1, _ground2];
+    
+    _clouds = @[_cloud1, _cloud2];
+    _bushes = @[_bush1, _bush2];
     
     for (CCNode *ground in _grounds)
     {
@@ -129,7 +141,8 @@
     
     character.rotation = clampf(character.rotation, -30.f, 90.f);
     
-    if (character.physicsBody.allowsRotation) {
+    if (character.physicsBody.allowsRotation)
+    {
         float angularVelocity = clampf(character.physicsBody.angularVelocity, -2.f, 1.f);
         character.physicsBody.angularVelocity = angularVelocity;
     }
@@ -141,7 +154,8 @@
     physicsNode.position = ccp(physicsNode.position.x - (character.physicsBody.velocity.x * delta), physicsNode.position.y);
     
     // loop the ground
-    for (CCNode *ground in _grounds) {
+    for (CCNode *ground in _grounds)
+    {
         // get the world position of the ground
         CGPoint groundWorldPosition = [physicsNode convertToWorldSpace:ground.position];
         // get the screen position of the ground
@@ -153,9 +167,12 @@
         }
     }
     
+    
+    
     NSMutableArray *offScreenObstacles = nil;
     
-    for (CCNode *obstacle in _obstacles) {
+    for (CCNode *obstacle in _obstacles)
+    {
         CGPoint obstacleWorldPosition = [physicsNode convertToWorldSpace:obstacle.position];
         CGPoint obstacleScreenPosition = [self convertToNodeSpace:obstacleWorldPosition];
         if (obstacleScreenPosition.x < -obstacle.contentSize.width) {
@@ -166,9 +183,38 @@
         }
     }
     
-    for (CCNode *obstacleToRemove in offScreenObstacles) {
+    for (CCNode *obstacleToRemove in offScreenObstacles)
+    {
         [obstacleToRemove removeFromParent];
         [_obstacles removeObject:obstacleToRemove];
+    }
+    
+    
+    for (CCNode *bush in _bushes)
+    {
+        // move the bush
+        bush.position = ccp(bush.position.x - (character.physicsBody.velocity.x * delta), bush.position.y);
+        
+        // if the left corner is one complete width off the screen,
+        // move it to the right
+        if (bush.position.x <= (-1 * bush.contentSize.width))
+        {
+            bush.position = ccp(bush.position.x + 2 * bush.contentSize.width, bush.position.y);
+        }
+    }
+    
+    // move and loop the clouds
+    for (CCNode *cloud in _clouds)
+    {
+        // move the cloud
+        cloud.position = ccp(cloud.position.x - (character.physicsBody.velocity.x * delta), cloud.position.y);
+        
+        // if the left corner is one complete width off the screen,
+        // move it to the right
+        if (cloud.position.x <= (-1 * cloud.contentSize.width))
+        {
+            cloud.position = ccp(cloud.position.x +2 * cloud.contentSize.width, cloud.position.y);
+        }
     }
     
     if (!_gameOver)
