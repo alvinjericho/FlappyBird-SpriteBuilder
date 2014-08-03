@@ -204,32 +204,32 @@
 					<real>0.0</real>
 				</array>
 				<array>
-					<real>0.0</real>
-					<real>23</real>
+					<real>0.97333532571792603</real>
+					<real>12.174862861633301</real>
 				</array>
 				<array>
-					<real>33</real>
-					<real>23</real>
+					<real>18.425022125244141</real>
+					<real>14.106267929077148</real>
 				</array>
 				<array>
-					<real>33</real>
-					<real>0.0</real>
+					<real>13.824536323547363</real>
+					<real>1.3359208106994629</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>33</real>
-						<real>0.0</real>
+						<real>13.824536323547363</real>
+						<real>1.3359208106994629</real>
 					</array>
 					<array>
-						<real>33</real>
-						<real>23</real>
+						<real>18.425022125244141</real>
+						<real>14.106267929077148</real>
 					</array>
 					<array>
-						<real>0.0</real>
-						<real>23</real>
+						<real>0.97333532571792603</real>
+						<real>12.174862861633301</real>
 					</array>
 					<array>
 						<real>0.0</real>
@@ -316,6 +316,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 		<key>seqExpanded</key>
 		<true/>
 	</dict>
