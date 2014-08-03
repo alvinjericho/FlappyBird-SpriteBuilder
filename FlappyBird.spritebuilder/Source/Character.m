@@ -20,8 +20,8 @@
 
 - (void)flap
 {
-    [self.physicsBody applyImpulse:ccp(0, 100.f)];
-    self.position = ccp(115, self.position.y);
+    [self.physicsBody applyImpulse:ccp(-20.f, 100.f)];
+    
 }
 
 @end
