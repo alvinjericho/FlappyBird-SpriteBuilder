@@ -105,7 +105,7 @@
     [super initialize];
     
     
-    physicsNode.debugDraw = TRUE;
+   // physicsNode.debugDraw = TRUE;
 
 }
 
