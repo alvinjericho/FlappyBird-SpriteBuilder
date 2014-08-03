@@ -103,6 +103,10 @@
     _scoreLabel.visible = true;
     
     [super initialize];
+    
+    
+    physicsNode.debugDraw = TRUE;
+
 }
 
 #pragma mark - Touch Handling
