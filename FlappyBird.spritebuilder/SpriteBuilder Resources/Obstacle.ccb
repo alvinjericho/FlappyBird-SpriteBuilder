@@ -87,8 +87,12 @@
 							<real>0.0</real>
 						</array>
 						<array>
-							<real>0.0</real>
-							<real>243</real>
+							<real>11.125</real>
+							<real>166.92707824707031</real>
+						</array>
+						<array>
+							<real>26.4296875</real>
+							<real>240.33061218261719</real>
 						</array>
 						<array>
 							<real>53</real>
@@ -111,8 +115,12 @@
 								<real>243</real>
 							</array>
 							<array>
-								<real>0.0</real>
-								<real>243</real>
+								<real>26.4296875</real>
+								<real>240.33061218261719</real>
+							</array>
+							<array>
+								<real>11.125</real>
+								<real>166.92707824707031</real>
 							</array>
 							<array>
 								<real>0.0</real>
@@ -194,6 +202,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -237,8 +247,8 @@
 					<key>points</key>
 					<array>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>-1.2578125</real>
+							<real>0.25361654162406921</real>
 						</array>
 						<array>
 							<real>0.0</real>
@@ -269,8 +279,8 @@
 								<real>270</real>
 							</array>
 							<array>
-								<real>0.0</real>
-								<real>0.0</real>
+								<real>-1.2578125</real>
+								<real>0.25361654162406921</real>
 							</array>
 						</array>
 					</array>
@@ -563,8 +573,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
